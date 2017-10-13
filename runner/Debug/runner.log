@@ -1,10 +1,10 @@
-﻿Build started 2017-10-12 10:48:35 PM.
+﻿Build started 2017-10-13 3:58:03 PM.
      1>Project "C:\Users\Bernadette\documents\visual studio 2013\Projects\lab4_cpen333\runner\runner.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt maze_runner.cpp
          maze_runner.cpp
-     1>c:\users\bernadette\documents\visual studio 2013\projects\lab4_cpen333\runner\maze_runner.cpp(27): warning C4351: new behavior: elements of array 'MazeRunner::loc_' will be default initialized
-     1>c:\users\bernadette\documents\visual studio 2013\projects\lab4_cpen333\runner\maze_runner.cpp(78): warning C4305: 'return' : truncation from 'int' to 'bool'
+     1>c:\users\bernadette\documents\visual studio 2013\projects\lab4_cpen333\runner\maze_runner.cpp(28): warning C4351: new behavior: elements of array 'MazeRunner::loc_' will be default initialized
+     1>c:\users\bernadette\documents\visual studio 2013\projects\lab4_cpen333\runner\maze_runner.cpp(79): warning C4305: 'return' : truncation from 'int' to 'bool'
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Bernadette\documents\visual studio 2013\Projects\lab4_cpen333\bin\runner.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Bernadette\documents\visual studio 2013\Projects\lab4_cpen333\bin\runner.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Bernadette\documents\visual studio 2013\Projects\lab4_cpen333\bin\runner.lib" /MACHINE:X86 Debug\maze_runner.obj
          runner.vcxproj -> C:\Users\Bernadette\documents\visual studio 2013\Projects\lab4_cpen333\bin\runner.exe
@@ -12,4 +12,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.51
+Time Elapsed 00:00:02.05

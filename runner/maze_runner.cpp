@@ -18,9 +18,9 @@ class MazeRunner {
 	size_t idx_;   // runner index
 	int loc_[2];   // current location
 
-	/*int mazeWidth = 0;
-	int mazeHeight = 0;*/
-	int visited[MAX_MAZE_SIZE][MAX_MAZE_SIZE]; //fill with zeroes when you get wifi
+	int mazeWidth = 0;
+	int mazeHeight = 0;
+	int visited[MAX_MAZE_SIZE][MAX_MAZE_SIZE];
 
 public:
 
@@ -42,14 +42,14 @@ public:
 		loc_[ROW_IDX] = memory_->rinfo.rloc[idx_][ROW_IDX];
 
 		//get specific maze dimensions
-		/*while (memory_->minfo.maze[0][mazeWidth]){
+		while (memory_->minfo.maze[0][mazeWidth]){
 			mazeWidth++;
 		}
 		mazeWidth++;
 		while (memory_->minfo.maze[mazeHeight][0]){
 			mazeHeight++;
 		}
-		mazeHeight++;*/
+		mazeHeight++;
 	}
 
 	/**
@@ -78,25 +78,24 @@ public:
 	bool helperFunc(int c, int r){
 		if (memory_->quit == true) return -1;
 		if (minfo_.maze[c][r] == EXIT_CHAR) return true;
-		//if(visited[c][r]) return false;
+		if (visited[c][r] == 1) return false;
+
 		memory_->rinfo.rloc[idx_][COL_IDX] = c;
 		memory_->rinfo.rloc[idx_][ROW_IDX] = r;
+		visited[c][r] = 1;
+
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 		// Recursively search for exit
-		//if (minfo_.maze[c][r - 1] != WALL_CHAR && visited[c][r-1] && helperFunc(c, r - 1)){
-		if (minfo_.maze[c][r - 1] != WALL_CHAR && helperFunc(c, r - 1)){
+		if (minfo_.maze[c][r - 1] != WALL_CHAR && visited[c][r-1] == 0 && helperFunc(c, r - 1)){
 			return true;
 		}
-		//if (minfo_.maze[c][r + 1] != WALL_CHAR && visited[c][r+1] && helperFunc(c, r + 1)){
-		if (minfo_.maze[c][r + 1] != WALL_CHAR && helperFunc(c, r + 1)){
+		if (minfo_.maze[c][r + 1] != WALL_CHAR && visited[c][r+1] == 0 && helperFunc(c, r + 1)){
 			return true;
 		}
-		//if (minfo_.maze[c - 1][r] != WALL_CHAR && visited[c - 1][r] && helperFunc(c - 1,r)){
-		if (minfo_.maze[c-1][r] != WALL_CHAR && helperFunc(c-1,r)){
+		if (minfo_.maze[c - 1][r] != WALL_CHAR && visited[c-1][r] == 0 && helperFunc(c - 1, r)){
 			return true;
 		}
-		//if (minfo_.maze[c+1][r] != WALL_CHAR && visited[c+1][r] && helperFunc(c + 1, r)){
-		if (minfo_.maze[c+1][r] != WALL_CHAR && helperFunc(c + 1, r)){
+		if (minfo_.maze[c + 1][r] != WALL_CHAR && visited[c+1][r] == 0 && helperFunc(c + 1, r)){
 			return true;
 		}
 
