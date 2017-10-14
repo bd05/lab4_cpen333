@@ -74,7 +74,7 @@ void init_runners(const MazeInfo& minfo, RunnerInfo& rinfo) {
 int main(int argc, char* argv[]) {
 
 	// read maze from command-line, default to maze0
-	std::string maze = "data/maze0.txt";
+	std::string maze = "data/maze2.txt";
 	if (argc > 1) {
 		maze = argv[1];
 	}

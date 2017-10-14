@@ -77,11 +77,17 @@ public:
 
 	bool helperFunc(int c, int r){
 		if (memory_->quit == true) return -1;
-		if (minfo_.maze[c][r] == EXIT_CHAR) return true;
-		if (visited[c][r] == 1) return false;
-
 		memory_->rinfo.rloc[idx_][COL_IDX] = c;
 		memory_->rinfo.rloc[idx_][ROW_IDX] = r;
+		if (minfo_.maze[c][r] == EXIT_CHAR){
+			//memory_->rinfo.rloc[idx_][COL_IDX] = c;
+			//memory_->rinfo.rloc[idx_][ROW_IDX] = r;
+			return true;
+		}
+		if (visited[c][r] == 1) return false;
+
+		//memory_->rinfo.rloc[idx_][COL_IDX] = c;
+		//memory_->rinfo.rloc[idx_][ROW_IDX] = r;
 		visited[c][r] = 1;
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
