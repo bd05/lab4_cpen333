@@ -49,6 +49,13 @@ public:
 		//===========================================================
 		// TODO: SEARCH MAZE FOR EXIT LOCATION
 		//===========================================================
+		if (memory_->magic != 0x37982121){
+			std::cout << "magic number not set, exiting program." << std::endl;
+			std::cout << "memory_->magic : " << memory_->magic << std::endl;
+			Sleep(1000); // wait 1 second
+			memory_->quit = true;
+		}
+
 		int numRows = memory_->minfo.rows;
 		int numCols = memory_->minfo.cols;
 
@@ -113,7 +120,7 @@ public:
 			char me = 'A' + i;
 			int newr = rinfo.rloc[i][ROW_IDX];
 			int newc = rinfo.rloc[i][COL_IDX];
-
+			
 			// if not already at the exit...
 			if (newc != exit_[COL_IDX] || newr != exit_[ROW_IDX]) {
 				if (newc != lastpos_[i][COL_IDX]

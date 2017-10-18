@@ -16,7 +16,7 @@ void load_maze(const std::string& filename, MazeInfo& minfo) {
 	// initialize number of rows and columns
 	minfo.rows = 0;
 	minfo.cols = 0;
-
+	
 	std::ifstream fin(filename);
 	std::string line;
 
@@ -74,7 +74,7 @@ void init_runners(const MazeInfo& minfo, RunnerInfo& rinfo) {
 int main(int argc, char* argv[]) {
 
 	// read maze from command-line, default to maze0
-	std::string maze = "data/maze2.txt";
+	std::string maze = "data/maze0.txt";
 	if (argc > 1) {
 		maze = argv[1];
 	}
@@ -83,6 +83,8 @@ int main(int argc, char* argv[]) {
 	//  TODO:  CREATE SHARED MEMORY AND INITIALIZE IT
 	//===============================================================
 	cpen333::process::shared_object<SharedData> sharedMemory("lab4_maze_runner");
+	sharedMemory->magic = 0x37982121;
+	std::cout << "memory_->magic : " << sharedMemory->magic << std::endl;
 	load_maze(maze, sharedMemory->minfo);
 	init_runners(sharedMemory->minfo, sharedMemory->rinfo);
 
@@ -93,6 +95,7 @@ int main(int argc, char* argv[]) {
 	//===============================================================
 	//  TODO:  INFORM OTHER PROCESSES TO QUIT
 	//===============================================================
+	sharedMemory->magic = NULL;
 	sharedMemory->quit = true;
 
 	return 0;

@@ -39,7 +39,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\Bernadette\Documents\Visual Studio 2013\Projects\lab4_cpen333\include\</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\Bernadette\Documents\Visual Studio 2013\Projects\lab4_cpen333\lab4_cpen333;C:\Users\Bernadette\Documents\Visual Studio 2013\Projects\lab4_cpen333\include</IncludePath>
     <OutDir>$(SolutionDir)bin\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -68,9 +68,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="maze_runner.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="maze_runner_common.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

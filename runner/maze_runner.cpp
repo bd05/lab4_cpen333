@@ -17,7 +17,7 @@ class MazeRunner {
 	// runner info
 	size_t idx_;   // runner index
 	int loc_[2];   // current location
-
+	//
 	int mazeWidth = 0;
 	int mazeHeight = 0;
 	int visited[MAX_MAZE_SIZE][MAX_MAZE_SIZE];
@@ -28,6 +28,12 @@ public:
 		minfo_(), idx_(0), loc_() {
 
 		// copy maze contents
+		if (memory_->magic != 0x37982121){
+			std::cout << "magic number not set, exiting program." << std::endl;
+			std::cout << "memory_->magic : " << memory_->magic << std::endl;
+			Sleep(1000); // wait 1 second
+			memory_->quit = true;
+		}
 		minfo_ = memory_->minfo;
 
 		{
@@ -79,15 +85,10 @@ public:
 		if (memory_->quit == true) return -1;
 		memory_->rinfo.rloc[idx_][COL_IDX] = c;
 		memory_->rinfo.rloc[idx_][ROW_IDX] = r;
-		if (minfo_.maze[c][r] == EXIT_CHAR){
-			//memory_->rinfo.rloc[idx_][COL_IDX] = c;
-			//memory_->rinfo.rloc[idx_][ROW_IDX] = r;
-			return true;
-		}
+
+		if (minfo_.maze[c][r] == EXIT_CHAR) return true;
 		if (visited[c][r] == 1) return false;
 
-		//memory_->rinfo.rloc[idx_][COL_IDX] = c;
-		//memory_->rinfo.rloc[idx_][ROW_IDX] = r;
 		visited[c][r] = 1;
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));

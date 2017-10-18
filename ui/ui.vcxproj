@@ -69,9 +69,6 @@
   <ItemGroup>
     <ClCompile Include="..\lab4_cpen333\maze_runner_ui.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\lab4_cpen333\maze_runner_common.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "runner", "runner\runner.vcx
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bin", "bin", "{95B6C0BC-A16A-4137-A56A-E25F9A707C1B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "malware", "malware\malware.vcxproj", "{7404EE89-05C7-4F29-8190-8BA17028F701}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -29,6 +31,10 @@ Global
 		{E6CB7820-970E-4F95-B0F4-9F179D82ABDB}.Debug|Win32.Build.0 = Debug|Win32
 		{E6CB7820-970E-4F95-B0F4-9F179D82ABDB}.Release|Win32.ActiveCfg = Release|Win32
 		{E6CB7820-970E-4F95-B0F4-9F179D82ABDB}.Release|Win32.Build.0 = Release|Win32
+		{7404EE89-05C7-4F29-8190-8BA17028F701}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7404EE89-05C7-4F29-8190-8BA17028F701}.Debug|Win32.Build.0 = Debug|Win32
+		{7404EE89-05C7-4F29-8190-8BA17028F701}.Release|Win32.ActiveCfg = Release|Win32
+		{7404EE89-05C7-4F29-8190-8BA17028F701}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
